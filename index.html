@@ -304,7 +304,66 @@ footer p {
   font-size: 14px;
   margin-top: 10px;
 }
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+    }
 
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-content h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .modal-content label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .modal-content button {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #1abc9c, #16a085);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .modal-content button:hover {
+      background: linear-gradient(135deg, #16a085, #1abc9c);
+    }
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -360,8 +419,31 @@ footer p {
       <h1>Innovate & Elevate</h1>
       <p>Your Trusted Partner for Digital Solutions</p>
       <a href="#about" class="btn">Discover More</a>
+      <button id="orderBtn" class="btn">Place Order</button>
     </div>
   </section>
+
+  <!-- Order Modal -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <h2>Place Your Order</h2>
+      <form id="orderForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="order">What do you want?</label>
+        <input type="text" id="order" name="order" required>
+
+        <label for="details">Describe your needs:</label>
+        <textarea id="details" name="details" rows="4" required></textarea>
+
+        <label for="promo">Promo Code (optional):</label>
+        <input type="text" id="promo" name="promo">
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </div>
+  </div>
 
   <!-- About Section -->
   <section id="about" class="about">
@@ -391,7 +473,7 @@ footer p {
 
       <div class="team-member">
         <div class="member-image">
-          <img src="woman.png"Maria Aftab">
+          <img src="woman.png" alt="Maria Aftab">
         </div>
         <div class="member-info">
           <h3>Maria Aftab</h3>
@@ -401,6 +483,22 @@ footer p {
             <a href="#"><i class="fab fa-linkedin"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-image">
+          <img src="woman.png" alt="Alishbah">
+        </div>
+        <div class="member-info">
+          <h3>Alishbah</h3>
+          <p class="role">UI/UX Designer</p>
+          <p class="bio">Creative designer with a passion for crafting intuitive and visually stunning user interfaces.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
           </div>
         </div>
       </div>
@@ -429,20 +527,61 @@ footer p {
     <p>&copy; 2025 TechFlix. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for Animations -->
+  <!-- JavaScript -->
   <script>
-    document.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < window.innerHeight - 100) {
-          section.querySelector('h2')?.classList.add('fade-in');
-          section.querySelector('p')?.classList.add('fade-in');
-          section.querySelectorAll('.team-member').forEach(member => {
-            member.classList.add('fade-in');
-          });
+    // Open Modal
+    const orderBtn = document.getElementById('orderBtn');
+    const orderModal = document.getElementById('orderModal');
+    const orderForm = document.getElementById('orderForm');
+
+    orderBtn.addEventListener('click', () => {
+      orderModal.style.display = 'flex';
+    });
+
+    // Close Modal on Outside Click
+    window.addEventListener('click', (event) => {
+      if (event.target === orderModal) {
+        orderModal.style.display = 'none';
+      }
+    });
+
+    // Handle Form Submission
+    orderForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const order = document.getElementById('order').value;
+      const details = document.getElementById('details').value;
+      const promo = document.getElementById('promo').value;
+
+      const orderData = {
+        name,
+        order,
+        details,
+        promo
+      };
+
+      // Send data to the server
+      try {
+        const response = await fetch('/submit-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(orderData)
+        });
+
+        if (response.ok) {
+          alert('Order submitted successfully!');
+          orderForm.reset();
+          orderModal.style.display = 'none';
+        } else {
+          alert('Failed to submit order. Please try again.');
         }
-      });
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+      }
     });
   </script>
 </body>

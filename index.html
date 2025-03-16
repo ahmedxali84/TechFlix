@@ -7,402 +7,491 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-:root {
-  --primary-color: #1abc9c;
-  --secondary-color: #2c3e50;
-  --accent-color: #e74c3c;
-  --background-light: #f9f9f9;
-  --text-dark: #333;
-  --text-light: #fff;
-  --gradient-primary: linear-gradient(135deg, #1abc9c, #16a085);
-  --gradient-secondary: linear-gradient(135deg, #2c3e50, #34495e);
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-}
+    :root {
+      --primary-color: #1abc9c;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --background-light: #f9f9f9;
+      --text-dark: #333;
+      --text-light: #fff;
+      --gradient-primary: linear-gradient(135deg, #1abc9c, #16a085);
+      --gradient-secondary: linear-gradient(135deg, #2c3e50, #34495e);
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  color: var(--text-dark);
-  background-color: var(--background-light);
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--background-light);
+    }
 
-/* Navbar */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  background-color: var(--secondary-color);
-  color: var(--text-light);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: var(--shadow);
-}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: var(--secondary-color);
+      color: var(--text-light);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
 
-nav .logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-light);
-  letter-spacing: 1px;
-}
+    nav .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: 1px;
+    }
 
-nav .nav-links {
-  display: flex;
-  list-style: none;
-}
+    nav .nav-links {
+      display: flex;
+      list-style: none;
+    }
 
-nav .nav-links li {
-  margin-left: 20px;
-}
+    nav .nav-links li {
+      margin-left: 20px;
+    }
 
-nav .nav-links a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition);
-  position: relative;
-}
+    nav .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
 
-nav .nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: var(--primary-color);
-  bottom: -5px;
-  left: 0;
-  transition: var(--transition);
-}
+    nav .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      bottom: -5px;
+      left: 0;
+      transition: var(--transition);
+    }
 
-nav .nav-links a:hover::after {
-  width: 100%;
-}
+    nav .nav-links a:hover::after {
+      width: 100%;
+    }
 
-/* Hero Section */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: var(--gradient-secondary), url('hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  color: var(--text-light);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: var(--gradient-secondary), url('hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--text-light);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
 
-.hero h1 {
-  font-size: 56px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-.hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
-  max-width: 600px;
-}
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
 
-.hero .btn {
-  padding: 12px 24px;
-  background: var(--gradient-primary);
-  color: var(--text-light);
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: var(--transition);
-  box-shadow: var(--shadow);
-}
+    .hero .btn {
+      padding: 12px 24px;
+      background: var(--gradient-primary);
+      color: var(--text-light);
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      border: none;
+      cursor: pointer;
+      margin: 0 10px;
+    }
 
-.hero .btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
+    .hero .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
 
-/* Sections Common Styling */
-section {
-  padding: 100px 10%;
-  text-align: center;
-}
+    section {
+      padding: 100px 10%;
+      text-align: center;
+    }
 
-section h2 {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: var(--secondary-color);
-  position: relative;
-}
+    section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: var(--secondary-color);
+      position: relative;
+    }
 
-section h2::after {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 4px;
-  background: var(--primary-color);
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+    section h2::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: var(--primary-color);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-/* About Section */
-.about {
-  background-color: var(--text-light);
-}
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
 
-.about p {
-  font-size: 18px;
-  color: var(--text-dark);
-  max-width: 800px;
-  margin: 0 auto;
-}
+    .team-member {
+      background: var(--text-light);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
 
-/* Team Section */
-.team {
-  background-color: var(--background-light);
-  padding: 100px 10%;
-}
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
 
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
-}
+    .member-image {
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
 
-.team-member {
-  background: var(--text-light);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  text-align: center;
-}
+    .member-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    }
 
-.team-member:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
+    .member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
 
-.member-image {
-  position: relative;
-  overflow: hidden;
-  height: 300px;
-}
+    .team-member:hover .member-image img {
+      transform: scale(1.1);
+    }
 
-.member-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition);
-}
+    .member-info {
+      padding: 20px;
+    }
 
-.team-member:hover .member-image img {
-  transform: scale(1.1);
-}
+    .member-info h3 {
+      font-size: 24px;
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
 
-.member-info {
-  padding: 20px;
-}
+    .role {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-.member-info h3 {
-  font-size: 24px;
-  color: var(--secondary-color);
-  margin-bottom: 10px;
-}
+    .bio {
+      color: #777;
+      margin-bottom: 20px;
+    }
 
-.member-info .role {
-  font-size: 16px;
-  color: var(--primary-color);
-  font-weight: 600;
-  margin-bottom: 10px;
-}
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
 
-.member-info .bio {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 20px;
-}
+    .social-links a {
+      color: var(--secondary-color);
+      font-size: 18px;
+      transition: var(--transition);
+    }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
+    .social-links a:hover {
+      color: var(--primary-color);
+    }
 
-.social-links a {
-  color: var(--secondary-color);
-  font-size: 18px;
-  transition: var(--transition);
-}
+    .services ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
 
-.social-links a:hover {
-  color: var(--primary-color);
-}
+    .services ul li {
+      background: var(--gradient-primary);
+      color: var(--text-light);
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 500;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* Services Section */
-.services ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
-}
+    .services ul li::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1));
+      transform: rotate(45deg);
+    }
 
-.services ul li {
-  background: var(--gradient-primary);
-  color: var(--text-light);
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 500;
-  transition: var(--transition);
-  box-shadow: var(--shadow);
-}
+    .services ul li:hover {
+      transform: translateY(-10px);
+      background: var(--gradient-secondary);
+    }
 
-.services ul li:hover {
-  transform: translateY(-10px);
-  background: var(--gradient-secondary);
-}
+    footer {
+      background-color: var(--secondary-color);
+      color: var(--text-light);
+      text-align: center;
+      padding: 40px 10%;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* Footer */
-footer {
-  background-color: var(--secondary-color);
-  color: var(--text-light);
-  text-align: center;
-  padding: 40px 10%;
-  margin-top: 60px;
-}
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: var(--primary-color);
+      transform: rotate(-2deg);
+      z-index: 0;
+    }
 
-footer .social-icons {
-  margin-bottom: 20px;
-}
+    /* Enhanced Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+      animation: fadeIn 0.4s ease;
+    }
 
-footer .social-icons a {
-  color: var(--text-light);
-  margin: 0 10px;
-  font-size: 24px;
-  transition: var(--transition);
-}
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-footer .social-icons a:hover {
-  color: var(--primary-color);
-}
+    .modal-content {
+      background: #ffffff;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      transform: scale(0.95);
+      animation: modalOpen 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-footer p {
-  font-size: 14px;
-  margin-top: 10px;
-}
-/* Modal Styling */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 1001;
-}
+    @keyframes modalOpen {
+      to { transform: scale(1); }
+    }
 
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    .form-container {
+      padding: 2rem;
+      overflow-y: auto;
+    }
 
-.modal-content h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
 
-.modal-content label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
-  color: #333;
-}
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
 
-.modal-content input,
-.modal-content textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: #f8f9fa;
+    }
 
-.modal-content button {
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #1abc9c, #16a085);
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.2);
+      background: #fff;
+    }
 
-.modal-content button:hover {
-  background: linear-gradient(135deg, #16a085, #1abc9c);
-}
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    /* Enhanced Order Slip Styling */
+    .order-slip {
+      padding: 1.5rem;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
 
-.fade-in {
-  animation: fadeIn 1s ease forwards;
-}
+    .slip-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 36px;
-  }
+    .slip-header h3 {
+      color: var(--primary-color);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
 
-  .hero p {
-    font-size: 18px;
-  }
+    .slip-header p {
+      font-size: 0.9rem;
+      color: #666;
+    }
 
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
+    .slip-detail {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+      padding: 0.6rem 0;
+      font-size: 0.9rem;
+    }
 
-  .services ul {
-    grid-template-columns: 1fr;
-  }
-}
+    .slip-detail span:first-child {
+      font-weight: 500;
+      color: var(--secondary-color);
+      flex: 1;
+    }
+
+    .slip-detail span:last-child {
+      flex: 1.5;
+      text-align: right;
+      color: var(--text-dark);
+    }
+
+    .slip-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .print-btn, .download-btn {
+      flex: 1;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .print-btn {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .download-btn {
+      background: var(--secondary-color);
+      color: white;
+    }
+
+    .print-btn:hover, .download-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+      .hero .btn {
+        margin: 10px 0;
+      }
+      .team-grid, .services ul {
+        grid-template-columns: 1fr;
+      }
+      .modal-content {
+        width: 95%;
+      }
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .order-slip,
+      .order-slip * {
+        visibility: visible;
+      }
+      .order-slip {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+      }
+      .print-btn {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <!-- Navbar -->
+  <!-- Navigation -->
   <nav>
     <div class="logo">TechFlix</div>
     <ul class="nav-links">
@@ -418,37 +507,97 @@ footer p {
     <div>
       <h1>Innovate & Elevate</h1>
       <p>Your Trusted Partner for Digital Solutions</p>
-      <a href="#about" class="btn">Discover More</a>
-      <button id="orderBtn" class="btn">Place Order</button>
+      <div>
+        <a href="#about" class="btn">Discover More</a>
+        <button id="orderBtn" class="btn">Place Order</button>
+      </div>
     </div>
   </section>
 
   <!-- Order Modal -->
   <div id="orderModal" class="modal">
     <div class="modal-content">
-      <h2>Place Your Order</h2>
-      <form id="orderForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+      <div class="form-container" id="orderFormContainer">
+        <h2>Place Your Order</h2>
+        <form id="orderForm">
+          <div class="form-group">
+            <label>Full Name:</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label>Location:</label>
+            <input type="text" id="location" required>
+          </div>
+          <div class="form-group">
+            <label>Service:</label>
+            <select id="service" required>
+              <option value="">Select Service</option>
+              <option>Web Development</option>
+              <option>Mobile App Development</option>
+              <option>Graphic Design</option>
+              <option>Digital Marketing</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Project Details:</label>
+            <textarea id="details" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Additional Notes:</label>
+            <textarea id="additional" rows="2"></textarea>
+          </div>
+          <button type="submit" class="btn">Submit Order</button>
+        </form>
+      </div>
 
-        <label for="order">What do you want?</label>
-        <input type="text" id="order" name="order" required>
-
-        <label for="details">Describe your needs:</label>
-        <textarea id="details" name="details" rows="4" required></textarea>
-
-        <label for="promo">Promo Code (optional):</label>
-        <input type="text" id="promo" name="promo">
-
-        <button type="submit">Submit Order</button>
-      </form>
+      <!-- Order Slip -->
+      <div id="orderSlip" class="order-slip">
+        <div class="slip-header">
+          <h3>Order Confirmed! 🎉</h3>
+          <p>Thank you for choosing TechFlix</p>
+        </div>
+        <div class="slip-detail">
+          <span>Order ID:</span>
+          <span id="slipId"></span>
+        </div>
+        <div class="slip-detail">
+          <span>Name:</span>
+          <span id="slipName"></span>
+        </div>
+        <div class="slip-detail">
+          <span>Email:</span>
+          <span id="slipEmail"></span>
+        </div>
+        <div class="slip-detail">
+          <span>Location:</span>
+          <span id="slipLocation"></span>
+        </div>
+        <div class="slip-detail">
+          <span>Service:</span>
+          <span id="slipService"></span>
+        </div>
+        <div class="slip-detail">
+          <span>Details:</span>
+          <span id="slipDetails"></span>
+        </div>
+        <div class="slip-detail">
+          <span>Additional Notes:</span>
+          <span id="slipAdditional"></span>
+        </div>
+        <button onclick="window.print()" class="print-btn">Print Receipt</button>
+        <button onclick="closeModal()" class="btn" style="margin-top: 1rem">Close</button>
+      </div>
     </div>
   </div>
 
   <!-- About Section -->
   <section id="about" class="about">
     <h2>About Us</h2>
-    <p>TechFlix specializes in web development, digital marketing, and software solutions. We deliver quality and innovation to help businesses thrive.</p>
+    <p>TechFlix specializes in delivering cutting-edge digital solutions with 5+ years of industry experience. We combine innovation with technical excellence to transform businesses.</p>
   </section>
 
   <!-- Team Section -->
@@ -460,13 +609,13 @@ footer p {
           <img src="./avatar-design.png" alt="Ahmed Ali">
         </div>
         <div class="member-info">
-         <a href="https://portfolio3-kohl.vercel.app/"> <h3>Ahmed Ali</h3> </a>
-          <p class="role">CEO | Web Developer | Python Developer | Data Analyst</p>
-          <p class="bio">A visionary leader with expertise in full-stack development and data analysis, driving TechFlix towards success.</p>
+          <a href="https://portfolio3-kohl.vercel.app/"><h3>Ahmed Ali</h3></a>
+          <p class="role">CEO | Full-Stack Developer</p>
+          <p class="bio">Expert in MERN stack with 10+ years experience leading technical teams and delivering enterprise solutions.</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
       </div>
@@ -476,13 +625,13 @@ footer p {
           <img src="woman.png" alt="Maria Aftab">
         </div>
         <div class="member-info">
-         <a href="https://maria-portfolio-two.vercel.app/"> <h3>Maria Aftab</h3> </a>
-          <p class="role">Digital Marketing Expert</p>
-          <p class="bio">Specialist in online branding, SEO, and social media marketing, helping businesses establish a strong digital presence.</p>
+          <a href="https://maria-portfolio-two.vercel.app/"><h3>Maria Aftab</h3></a>
+          <p class="role">Digital Marketing Head</p>
+          <p class="bio">SEO and social media expert with proven track record in brand growth and online engagement strategies.</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
           </div>
         </div>
       </div>
@@ -492,13 +641,13 @@ footer p {
           <img src="woman.png" alt="Alishbah">
         </div>
         <div class="member-info">
-         <a href="https://alishba-port-folio.vercel.app/"> <h3>Alishbah</h3> </a>
-          <p class="role">UI/UX Designer</p>
-          <p class="bio">Creative designer with a passion for crafting intuitive and visually stunning user interfaces.</p>
+          <a href="https://alishba-port-folio.vercel.app/"><h3>Alishbah</h3></a>
+          <p class="role">Lead UI/UX Designer</p>
+          <p class="bio">Creative designer specializing in user-centered interfaces with 5+ years of product design experience.</p>
           <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
             <a href="#"><i class="fab fa-behance"></i></a>
             <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-figma"></i></a>
           </div>
         </div>
       </div>
@@ -509,11 +658,14 @@ footer p {
   <section id="services" class="services">
     <h2>Our Services</h2>
     <ul>
-      <li>Web Development</li>
-      <li>Mobile App Development</li>
+      <li>Custom Web Development</li>
+      <li>Mobile App Development (iOS/Android)</li>
+      <li>E-commerce Solutions</li>
+      <li>UI/UX Design & Prototyping</li>
       <li>Digital Marketing & SEO</li>
-      <li>Graphic Design & Branding</li>
-      <li>Software Development</li>
+      <li>Cloud Computing Solutions</li>
+      <li>Software Maintenance & Support</li>
+      <li>Branding & Graphic Design</li>
     </ul>
   </section>
 
@@ -523,65 +675,60 @@ footer p {
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
       <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
-    <p>&copy; 2025 TechFlix. All rights reserved.</p>
+    <p>&copy; 2025 TechFlix. All rights reserved</p>
+    <p>Contact: info@techflix.com | +92 300 1234567</p>
   </footer>
 
-  <!-- JavaScript -->
   <script>
-    // Open Modal
     const orderBtn = document.getElementById('orderBtn');
     const orderModal = document.getElementById('orderModal');
     const orderForm = document.getElementById('orderForm');
+    const orderSlip = document.getElementById('orderSlip');
+    const formContainer = document.getElementById('orderFormContainer');
 
     orderBtn.addEventListener('click', () => {
       orderModal.style.display = 'flex';
+      orderSlip.style.display = 'none';
+      formContainer.style.display = 'block';
     });
 
-    // Close Modal on Outside Click
-    window.addEventListener('click', (event) => {
-      if (event.target === orderModal) {
+    window.addEventListener('click', (e) => {
+      if (e.target === orderModal) {
         orderModal.style.display = 'none';
       }
     });
 
-    // Handle Form Submission
-    orderForm.addEventListener('submit', async (e) => {
+    orderForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      const orderId = '#' + Math.floor(Math.random() * 1000000);
+      
+      document.getElementById('slipId').textContent = orderId;
+      document.getElementById('slipName').textContent = document.getElementById('name').value;
+      document.getElementById('slipEmail').textContent = document.getElementById('email').value;
+      document.getElementById('slipLocation').textContent = document.getElementById('location').value;
+      document.getElementById('slipService').textContent = document.getElementById('service').value;
+      document.getElementById('slipDetails').textContent = document.getElementById('details').value;
+      document.getElementById('slipAdditional').textContent = document.getElementById('additional').value || 'None';
 
-      const name = document.getElementById('name').value;
-      const order = document.getElementById('order').value;
-      const details = document.getElementById('details').value;
-      const promo = document.getElementById('promo').value;
+      formContainer.style.display = 'none';
+      orderSlip.style.display = 'block';
+    });
 
-      const orderData = {
-        name,
-        order,
-        details,
-        promo
-      };
+    function closeModal() {
+      orderModal.style.display = 'none';
+      orderForm.reset();
+    }
 
-      // Send data to the server
-      try {
-        const response = await fetch('/submit-order', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(orderData)
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
-
-        if (response.ok) {
-          alert('Order submitted successfully!');
-          orderForm.reset();
-          orderModal.style.display = 'none';
-        } else {
-          alert('Failed to submit order. Please try again.');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again.');
-      }
+      });
     });
   </script>
 </body>
